@@ -1,5 +1,17 @@
 import { useState } from "react";
+
+import styled from "@emotion/styled";
 import "./Counter.css";
+
+const BtnSubtract = styled.button`
+  color: tomato;
+  background-color: yellow;
+
+  &:hover {
+    color: yellow;
+    background-color: tomato;
+  }
+`;
 
 const Counter = () => {
   const [counter, setCounter] = useState(5);
@@ -9,14 +21,14 @@ const Counter = () => {
   };
 
   const handleSubtractClick = () => {
-    setCounter(counter + 1);
+    setCounter(counter - 1);
   };
 
   return (
     <div>
       <h1>Counter: {counter}</h1>
-      <button onClick={() => handleAddClick()}>Add</button>
-      <button onClick={() => handleSubtractClick()}>Subtract</button>
+      <BtnSubtract onClick={handleSubtractClick}>Subtract</BtnSubtract>
+      <button onClick={handleAddClick}>Add</button>
     </div>
   );
 };
