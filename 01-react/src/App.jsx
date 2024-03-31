@@ -1,7 +1,13 @@
-import Counter from "./components/Counter"
+import Counter from "./components/Counter";
+
+import "./App.css";
 
 const App = () => {
-  return <Counter />;
-}
+  return (
+    <div className="app-header">
+      <Counter />
+    </div>
+  );
+};
 
-export default App
+export default App;
