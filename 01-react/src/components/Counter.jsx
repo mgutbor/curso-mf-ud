@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { handleClick } from "../helpers/handleClick";
+
 import styled from "@emotion/styled";
 import "./Counter.css";
 
@@ -16,19 +18,11 @@ const BtnSubtract = styled.button`
 const Counter = () => {
   const [counter, setCounter] = useState(5);
 
-  const handleAddClick = () => {
-    setCounter(counter + 1);
-  };
-
-  const handleSubtractClick = () => {
-    setCounter(counter - 1);
-  };
-
   return (
     <div>
       <h1>Counter: {counter}</h1>
-      <BtnSubtract onClick={handleSubtractClick}>Subtract</BtnSubtract>
-      <button onClick={handleAddClick}>Add</button>
+      <BtnSubtract onClick={() => setCounter(handleClick(counter, -1))}>Subtract</BtnSubtract>
+      <button onClick={() => setCounter(handleClick(counter, 1))}>Add</button>
     </div>
   );
 };
