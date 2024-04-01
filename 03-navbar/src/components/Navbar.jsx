@@ -1,7 +1,11 @@
+import "./Navbar.css";
+
 const Navbar = () => {
   return (
-    <h1>Navbar in</h1>
-  )
-}
+    <nav>
+      <h1>Navbar Component</h1>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
