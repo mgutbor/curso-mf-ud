@@ -3,7 +3,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav>
-      <h1>MMX Shop</h1>
+      <h1>Counter MF</h1>
     </nav>
   );
 };

@@ -4,11 +4,15 @@ import ReactDOM from "react-dom/client";
 import Navbar from "navbar/Navbar";
 import Counter from "counter/Counter";
 
+import "./index.css";
+
 const App = () => (
   <>
     <Navbar />
-    <h1>Host Component</h1>
-    <Counter />
+    <div className="host-container">
+      <h2>Counter MF</h2>
+      <Counter />
+    </div>
   </>
 );
 

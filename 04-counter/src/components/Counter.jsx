@@ -1,7 +1,9 @@
 
+import "./Counter.css";
+
 const Counter = () => {
   return (
-    <div>Counter</div>
+    <div className="app-counter-container">Counter</div>
   )
 }
 
