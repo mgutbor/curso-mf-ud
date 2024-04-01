@@ -9,3 +9,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.app-counter-container h2{
+  font-size: 2rem;
+}
