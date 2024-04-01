@@ -3,7 +3,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav>
-      <h1>Navbar Component</h1>
+      <h1>MMX Shop</h1>
     </nav>
   );
 };
