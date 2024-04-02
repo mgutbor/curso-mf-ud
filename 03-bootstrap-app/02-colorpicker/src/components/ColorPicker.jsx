@@ -1,20 +1,8 @@
-import { useState } from "react";
+import { useColors } from "../hooks/useColors";
 
 const ColorPicker = () => {
-  const [color, setColor] = useState("#000000");
-  const [colorsList, setColorslist] = useState([]);
 
-  const handleChangeColor = (e) => {
-    setColor(e.target.value);
-  };
-
-  const handleSubmitSaveColor = (e) => {
-    e.preventDefault();
-
-    const copyColorsList = [color, ...colorsList];
-    setColorslist(copyColorsList);
-  };
-
+  const { color, colorsList, handleChangeColor, handleSubmitSaveColor } = useColors();
   return (
     <>
       <form onSubmit={handleSubmitSaveColor}>
