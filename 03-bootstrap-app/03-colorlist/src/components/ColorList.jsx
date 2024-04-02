@@ -16,7 +16,7 @@ const ColorList = ({ colorsList }) => {
           >
             {color}
           </button>
-        )) : <h5>No hay colores para mostrar</h5>}
+        )) : <h5 className="alert alert-danger text-center">No hay colores para mostrar</h5>}
       </div>
     </>
   );

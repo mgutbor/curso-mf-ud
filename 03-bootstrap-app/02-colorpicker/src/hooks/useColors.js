@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useColors = () => {
   const [color, setColor] = useState("#000000");
@@ -10,11 +10,14 @@ export const useColors = () => {
 
   const handleSubmitSaveColor = (e) => {
     e.preventDefault();
-
     const copyColorsList = [color, ...colorsList];
     setColorslist(copyColorsList);
   };
-  
+
+  useEffect(() => {
+    localStorage.setItem("colors", JSON.stringify(colorsList));
+  }, [colorsList]);
+
   return {
     color,
     colorsList,
