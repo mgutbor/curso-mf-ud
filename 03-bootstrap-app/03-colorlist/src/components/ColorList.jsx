@@ -1,4 +1,4 @@
-const ColorList = ({ colorsList }) => {
+const ColorList = ({ colorsList = [] }) => {
   return (
     <>
       <h6 className="text-center">Listado de colores guardados</h6>

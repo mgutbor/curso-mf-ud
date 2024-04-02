@@ -16,7 +16,7 @@ const App = () => {
     <div className="container mt-4">
       <div className="row">
         <div className="col-12 col-md-4"><ColorList colorsList={colorsList} /></div>
-        <div className="col-12 col-md-8"><ColorPicker color={color} colorsList={colorsList} handleChangeColor={handleChangeColor} handleSubmitSaveColor={handleSubmitSaveColor} /></div>
+        <div className="col-12 col-md-8"><ColorPicker color={color} handleChangeColor={handleChangeColor} handleSubmitSaveColor={handleSubmitSaveColor} /></div>
       </div>
     </div>
   </>
