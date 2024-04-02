@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { getColorList, getLastColor } from "../helpers/getColors";
 
 export const useColors = () => {
-  const [color, setColor] = useState("#000000");
-  const [colorsList, setColorslist] = useState([]);
+  const [color, setColor] = useState( getLastColor() );
+  const [colorsList, setColorslist] = useState(getColorList());
 
   const handleChangeColor = (e) => {
     setColor(e.target.value);
