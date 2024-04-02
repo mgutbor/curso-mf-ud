@@ -1,26 +1,25 @@
-
-
-const ColorList = () => {
-
-  const colorsList = ["#ff0000", "#00ff00", "#0000ff"];
-
+const ColorList = ({ colorsList }) => {
   return (
-    <div className="list-group text-center">
-      { colorsList.map((color, index) => (
-        <button
-          className="list-group-item list-group-item-action text-white"
-          key={index}
-          aria-current="true"
-          title="Copiar"
-          style={{
-            background: color,
-            fontWeight: "bolder"
-          }}>
+    <>
+      <h6 className="text-center">Listado de colores guardados</h6>
+      <div className="list-group text-center">
+        {colorsList.length > 0 ? colorsList.map((color, index) => (
+          <button
+            className="list-group-item list-group-item-action text-white"
+            key={index}
+            aria-current="true"
+            title="Copiar"
+            style={{
+              background: color,
+              fontWeight: "bolder",
+            }}
+          >
             {color}
           </button>
-      ))}
-    </div>
-  )
-}
+        )) : <h5>No hay colores para mostrar</h5>}
+      </div>
+    </>
+  );
+};
 
-export default ColorList
+export default ColorList;

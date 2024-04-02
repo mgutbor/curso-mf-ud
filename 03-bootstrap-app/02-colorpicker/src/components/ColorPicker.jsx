@@ -1,8 +1,5 @@
-import { useColors } from "../hooks/useColors";
+const ColorPicker = ({ color, handleChangeColor, handleSubmitSaveColor }) => {
 
-const ColorPicker = () => {
-
-  const { color, colorsList, handleChangeColor, handleSubmitSaveColor } = useColors();
   return (
     <>
       <form onSubmit={handleSubmitSaveColor}>
@@ -38,7 +35,6 @@ const ColorPicker = () => {
           </button>
         </div>
       </form>
-      <pre>{colorsList}</pre>
     </>
   );
 };
