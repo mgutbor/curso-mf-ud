@@ -1,4 +1,21 @@
+import Swal from "sweetalert2";
+
 const ColorList = ({ colorsList = [] }) => {
+
+  const handleCopyColor = (color) => {
+
+    navigator.clipboard.writeText(color);
+
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: `Color: ${color.toUpperCase()} copiado!!!`,
+      showConfirmButton: false,
+      timer: 2500,     
+      timerProgressBar: true 
+    })
+  };
+
   return (
     <>
       <h6 className="text-center">Listado de colores guardados</h6>
@@ -13,6 +30,7 @@ const ColorList = ({ colorsList = [] }) => {
               background: color,
               fontWeight: "bolder",
             }}
+            onClick={() => handleCopyColor(color)}
           >
             {color}
           </button>
