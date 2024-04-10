@@ -10,7 +10,5 @@ RUN yarn install
 
 RUN yarn build
 
-EXPOSE 8080
-
-CMD [ "http-server", "dist", "-p", "8080" ]
-
+EXPOSE 8083
+CMD [ "http-server", "dist", "-p", "8083" ]
