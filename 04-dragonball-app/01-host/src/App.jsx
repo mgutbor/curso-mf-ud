@@ -23,7 +23,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Suspense fallback={<Loader />}><HomePage /></Suspense>} />
       <Route path="/personajes" element={<Suspense fallback={<Loader />}><PersonajesPage /></Suspense>} />
-      <Route path="/personajes/:name" element={<Suspense fallback={<Loader />}><DetallePersonajePage /></Suspense>} />
+      <Route path="/personajes/:id" element={<Suspense fallback={<Loader />}><DetallePersonajePage /></Suspense>} />
       <Route path="/about" element={<Suspense fallback={<Loader />}><AboutPage /></Suspense>} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

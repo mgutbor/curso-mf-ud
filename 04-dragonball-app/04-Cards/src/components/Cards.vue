@@ -9,7 +9,7 @@
         :key="personaje.id"
         class="card"
       >
-        <a :href="`/personajes/${personaje.name}`">
+        <a :href="`/personajes/${personaje.id}`">
           <img :src="personaje.image" :alt="personaje.name" />
           <h3>{{ personaje.name }}</h3>
           <p>{{ personaje.race }}</p>
