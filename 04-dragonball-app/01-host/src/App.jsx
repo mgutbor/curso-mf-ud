@@ -1,24 +1,28 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import HomePage from "./Pages/HomePage";
-import PersonajesPage from "./Pages/PersonajesPage";
-import AboutPage from "./Pages/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage";
 
 import Navbar from "mf_navbar/Navbar";
 
+import Loader from "./components/Loader";
+
 import "./index.scss";
+
+const HomePage = lazy(() => import("./Pages/HomePage"));
+const PersonajesPage = lazy(() => import("./Pages/PersonajesPage"));
+const AboutPage = lazy(() => import("./Pages/AboutPage"));
 
 const App = () => (
   <BrowserRouter>
     <Navbar />
+
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/personajes" element={<PersonajesPage />} />
-      <Route path="/about" element={<AboutPage />} />
+      <Route path="/" element={<Suspense fallback={<Loader />}><HomePage /></Suspense>} />
+      <Route path="/personajes" element={<Suspense fallback={<Loader />}><PersonajesPage /></Suspense>} />
+      <Route path="/about" element={<Suspense fallback={<Loader />}><AboutPage /></Suspense>} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   </BrowserRouter>
