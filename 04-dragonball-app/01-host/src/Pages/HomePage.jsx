@@ -8,7 +8,7 @@ const HomePage = () => {
     <div className='text-center'>
       <h1 className='font-bold text-large'>Counter MF</h1>
       <Error>
-        <Counter />
+        <Counter initialCounter={10} />
       </Error>
     </div>
   )
