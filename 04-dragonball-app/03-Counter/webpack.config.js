@@ -41,10 +41,12 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "03_Counter",
+      name: "mf_counter",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Counter": "./src/components/Counter.jsx",
+      },
       shared: {
         ...deps,
         react: {
