@@ -16,7 +16,6 @@ const DetallePersonaje = () => {
     const response = await fetch(`https://dragonball-api.com/api/characters/${id}`);
     const data = await response.json();
     setPersonaje(data);
-    console.log(data);
   };
 
   useEffect(() => {
