@@ -1,16 +1,19 @@
 FROM node:16.17.0-alpine
 
+RUN mkdir app
+
 WORKDIR /app
 
-COPY . .
-
-RUN npm i -g http-server yarn
+COPY ["package*.json","/app"]
 
 RUN yarn install
 
+COPY ["*","/app"]
+
 RUN yarn build
 
-EXPOSE 8080
+RUN npm i -g http-server
 
+EXPOSE 8080
 CMD [ "http-server", "dist", "-p", "8080" ]
 

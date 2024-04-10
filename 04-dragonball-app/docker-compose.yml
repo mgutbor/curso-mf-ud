@@ -1,37 +1,32 @@
 version: '3.9'
 services:
-  host:
+  01-host:
     build:
-      context: host
-      dockerfile: ./host/Dockerfile
+      dockerfile: ./01-host/Dockerfile
     ports:
       - "8080:8080"
     links:
-      - mf_navbar
-      - mf_counter
-      - mf_cards
-      - mf_detalle_personaje
-  mf_navbar:
+      - 02-mf-navbar
+      - 03-counter
+      - 04-cards
+      - 05-detalle-personaje
+  02-mf-navbar:
     build:
-      context: mf_navbar
-      dockerfile: ./mf_navbar/Dockerfile
+      dockerfile: ./02-mf-navbar/Dockerfile
     ports:
       - "8081:8081"
-  mf_counter:
+  03-counter:
     build:
-      context: mf_counter
-      dockerfile: ./mf_counter/Dockerfile
+      dockerfile: ./03-Counter/Dockerfile
     ports:
       - "8082:8082"
-  mf_cards:
+  04-cards:
     build:
-      context: mf_cards
-      dockerfile: ./mf_cards/Dockerfile
+      dockerfile: ./04-Cards/Dockerfile
     ports:
       - "8083:8083"
-  mf_detalle_personaje:
+  05-detalle-personaje:
     build:
-      context: mf_detalle_personaje
-      dockerfile: ./mf_detalle_personaje/Dockerfile
+      dockerfile: ./05-Detalle-Personaje/Dockerfile
     ports:
       - "8084:8084"
