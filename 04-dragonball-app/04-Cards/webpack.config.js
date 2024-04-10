@@ -46,10 +46,12 @@ module.exports = (_, argv) => ({
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "04_Cards",
+      name: "mf_cards",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./placeCards": "./src/placeCards.js",
+      },
       shared: require("./package.json").dependencies,
     }),
     new HtmlWebPackPlugin({
